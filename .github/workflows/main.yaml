@@ -18,5 +18,14 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install dependencies
+        run: pip install flake8
+
+      - name: Lint code
+        run: flake8 .
+
       - name: Run script
         run: python3 app.py
+
+      - name: Final message
+        run: echo "✅ Pipeline completed successfully"
